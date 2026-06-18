@@ -9,7 +9,7 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 # Lab 2 — JTBD Project Analysis / Dùng JTBD để soi lại dự án nhóm
 
-**Tên dự án / sản phẩm:** _______________  
+**Tên dự án / sản phẩm:** AI Code Review Assistant (Trợ lý AI tự động đánh giá Pull Request)  
 
 > Đây là **file duy nhất** của Lab 2.  
 > File này đồng thời đóng vai trò:
@@ -99,10 +99,10 @@ Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó 
 
 ### Điền nhanh trước khi làm
 
-- **Dự án của nhóm tôi là:** ___________________________________
-- **Lát cắt tôi chọn để phân tích hôm nay là:** ___________________________________
+- **Dự án của nhóm tôi là:** Trợ lý AI tích hợp vào GitHub/GitLab để review code tự động.
+- **Lát cắt tôi chọn để phân tích hôm nay là:** Giúp Senior Developer / Tech Lead review các Pull Request (PR) nhanh và chuẩn xác hơn trước khi merge.
 - **Vì sao tôi chọn lát cắt này:**  
-  > ___________________________________
+  > Vì bước review PR hiện tại là nút thắt cổ chai (bottleneck) lớn nhất của team dev, tốn rất nhiều thời gian và dễ lọt bug do người review bị mệt mỏi (cognitive overload).
 
 ### Viết quá rộng vs viết sắc hơn
 
@@ -121,13 +121,13 @@ Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó 
 ### Tóm tắt dự án trong 3 dòng
 
 1. **Nhóm tôi đang nghĩ mình đang giải quyết vấn đề gì?**  
-   > ___________________________________
+   > Quá trình code review thủ công tốn quá nhiều thời gian của nhân sự cấp cao và dễ bị sót lỗi (human error).
 
 2. **Người dùng chính hiện nhóm đang nhắm tới là ai?**  
-   > ___________________________________
+   > Senior Developer hoặc Tech Lead (những người được giao nhiệm vụ duyệt code/PR).
 
 3. **Hiện tại người dùng đó đang giải quyết vấn đề này bằng cách nào?**  
-   > ___________________________________
+   > Đọc code bằng mắt thường trên GitHub/GitLab, chạy test cục bộ, hoặc thỉnh thoảng copy từng đoạn nhỏ thả vào ChatGPT.
 
 ---
 
@@ -139,21 +139,22 @@ Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó 
 ### Trả lời 4 câu ngắn
 
 1. **Ai đang gặp vấn đề này?**  
-   > ___________________________________
+   > Tech Lead / Senior Developer tại các đội dev bận rộn.
 
 2. **Vấn đề xuất hiện trong hoàn cảnh nào?**  
-   > ___________________________________
+   > Khi có quá nhiều PR được mở mỗi ngày, sát giờ release, khiến người review bị quá tải context.
 
 3. **Hiện tại họ đang dùng giải pháp thay thế nào?**  
-   > ___________________________________
+   > Review thủ công (đọc diff), tích hợp SonarQube (phân tích tĩnh) hoặc CI/CD cơ bản.
 
 4. **Vì sao đây là thời điểm đáng giải?**  
-   > ___________________________________
+   > Context window của các mô hình LLM đã đủ lớn để "hiểu" cấu trúc toàn bộ codebase thay vì chỉ vài dòng code rời rạc.
 
 ### Tóm tắt market context trong 3-4 dòng
 
-> _______________________________________________  
-> _______________________________________________
+> Các Tech Lead đang bị quá tải bởi việc review hàng tá PR mỗi ngày, dẫn đến review hời hợt và lọt bug. 
+> Các tool cũ chỉ bắt được lỗi cú pháp chứ không hiểu logic nghiệp vụ. 
+> Đây là lúc AI có thể giúp đọc hiểu logic toàn diện để giảm tải áp lực nhận thức cho lập trình viên.
 
 ---
 
@@ -174,9 +175,9 @@ Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó 
 
 ### Điền
 
-- **Job executor của dự án này là:** ___________________________________
+- **Job executor của dự án này là:** Tech Lead / Senior Developer (Người chịu trách nhiệm review PR).
 - **Vì sao tôi tin đây là người trực tiếp "thuê" giải pháp để làm job:**  
-  > ___________________________________
+  > Vì họ là người tốn mồ hôi công sức nhất cho việc dò lỗi, và là người bị lôi ra chịu trách nhiệm đầu tiên nếu lọt bug nghiêm trọng lên production.
 
 ---
 
@@ -207,16 +208,16 @@ Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó 
 ### Bản nháp 1
 
 **Core JTBD bản nháp:**  
-> _______________________________________________
+> Dùng AI để tự động tìm bug và review code cho Tech Lead.
 
 ### Gạch bỏ từ solution nếu có
 
-- Các từ solution tôi đang lỡ nhét vào câu: _________________________________
+- Các từ solution tôi đang lỡ nhét vào câu: AI, tự động tìm bug, review code.
 
 ### Bản chốt
 
 **Core JTBD cuối cùng:**  
-> _______________________________________________
+> Đánh giá chất lượng và rủi ro của đoạn code mới thay đổi một cách nhanh chóng, chính xác trước khi đưa vào môi trường thực tế.
 
 ---
 
@@ -239,9 +240,9 @@ When [trigger], I want to [motivation], so I can [outcome].
 
 | # | Trigger / When | Motivation / I want to | Outcome / so I can | Điều story này cho thấy |
 |---|---|---|---|---|
-| JS1 | | | | |
-| JS2 | | | | |
-| JS3 | | | | |
+| JS1 | Khi có một PR lớn với hàng trăm dòng thay đổi | Tôi muốn xác định ngay các điểm rủi ro bảo mật cốt lõi | So I can tập trung review sâu vào các file đó thay vì dò từng dòng mắt thường | Nhu cầu đánh giá mức độ nghiêm trọng (Triage) |
+| JS2 | Khi tôi đang duyệt code của Junior Dev | Tôi muốn chỉ ra các điểm vi phạm best practices và convention | So I can giúp họ học hỏi mà không tốn công gõ comment giải thích dài dòng | Nhu cầu duy trì chuẩn mực code (Standard) |
+| JS3 | Khi hệ thống sắp đến deadline release | Tôi muốn đảm bảo code mới không vô tình phá hỏng các luồng chức năng cũ | So I can yên tâm duyệt bài và không lo bị gọi dậy giữa đêm vì sự cố | Nhu cầu phân tích tác động chéo (Impact analysis) |
 
 ### Tự kiểm nhanh
 
@@ -268,14 +269,14 @@ Qua JTBD lens, đối thủ không chỉ là app cùng ngành.
 
 | Alternative hiện tại | User đang thuê nó để làm gì? | Nó làm tốt gì? | Nó fail ở đâu? | Switching cost hiện tại cao hay thấp? |
 |---|---|---|---|---|
-| Alt 1 | | | | |
-| Alt 2 | | | | |
-| Alt 3 | | | | |
+| Đọc mắt trên GitHub UI | Đọc hiểu logic thay đổi | Hiểu sâu nghiệp vụ dự án | Chậm, mỏi mắt, lọt bug nếu mất tập trung | Cao (workflow bắt buộc bao năm nay) |
+| Tool phân tích tĩnh (SonarQube) | Bắt lỗi cú pháp, code smell | Nhanh, tự động | Rập khuôn, sinh ra nhiều cảnh báo rác (false positive), không hiểu business logic | Thấp |
+| ChatGPT (Copy/Paste) | Giải thích đoạn code khó hiểu | Phản hồi ngay, hướng dẫn chi tiết | Rất tốn công copy, rủi ro lộ mã nguồn công ty | Thấp |
 
 ### Kết luận nhanh
 
 **Nếu project của tôi biến mất hôm nay, user nhiều khả năng sẽ quay về:**  
-> _______________________________________________
+> Đọc code thủ công bằng mắt thường trên GitHub kết hợp với các công cụ CI/CD check lỗi cú pháp đơn thuần.
 
 ---
 
@@ -310,23 +311,23 @@ Mục tiêu là nhìn ra:
 
 | Step | Trong workflow này user đang cố làm gì? | Hôm nay họ đang dùng gì? | Friction / pain hiện tại | Mức đau |
 |---|---|---|---|---|
-| Define | | | | Low / Med / High |
-| Locate | | | | Low / Med / High |
-| Prepare | | | | Low / Med / High |
-| Confirm | | | | Low / Med / High |
-| Execute | | | | Low / Med / High |
-| Monitor | | | | Low / Med / High |
-| Modify | | | | Low / Med / High |
-| Conclude | | | | Low / Med / High |
+| Define | Nhận thông báo có PR mới cần review | Email, Slack | Bị đứt mạch làm việc hiện tại (context switch) | Med |
+| Locate | Mở PR, tìm hiểu bối cảnh (ticket Jira, mô tả) | GitHub PR description | Dev viết mô tả quá sơ sài, người review không hiểu code này làm gì | High |
+| Prepare | Kéo code về máy (nếu cần), xem danh sách file diff | Git CLI, GitHub UI | Khó nắm được luồng ảnh hưởng nếu file thay đổi quá dài | Med |
+| Confirm | Rà soát logic, tìm rủi ro tiềm ẩn / side-effect | Mắt thường, kinh nghiệm | Rất dễ sót lỗi logic ngầm nếu không tập trung 100% | High |
+| Execute | Viết comment yêu cầu sửa đổi (Request Changes) | GitHub comment | Lười viết giải thích cặn kẽ cho dev khác hiểu | Med |
+| Monitor | Đợi dev sửa rồi review vòng 2 | GitHub | Quên mất ngữ cảnh lần trước mình vừa comment gì | Low |
+| Modify | Phê duyệt PR (Approve) | GitHub button | Vẫn lo âu bấm nhầm gây lỗi prod | Med |
+| Conclude | PR được merge, đóng ticket | GitHub, Jira | Không | N/A |
 
 ### Chốt 2 bước đau nhất
 
-**Bước đau nhất #1:** _________________________________  
-**Bước đau nhất #2:** _________________________________
+**Bước đau nhất #1:** Locate (Tìm hiểu bối cảnh của một PR sơ sài).  
+**Bước đau nhất #2:** Confirm (Đảm bảo code không có side-effect hoặc lỗi logic ẩn).
 
 **Vì sao đây là nơi đáng chú ý nhất:**  
-> _______________________________________________  
-> _______________________________________________
+> Vì đây là 2 bước đòi hỏi nỗ lực nhận thức (cognitive load) cực cao.
+> Người review phải bắt não bộ hoạt động hết công suất để tự ghép nối context và dự đoán rủi ro.
 
 ---
 
@@ -345,16 +346,16 @@ Sau khi map workflow, mới hỏi:
 
 | Step | AI nên giúp bằng cách nào? | Vì sao AI hợp ở đây? | Rủi ro chính nếu dùng AI |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
+| Locate | Tự động đọc diff và sinh bản tóm tắt PR (Summary) mạch lạc, giải thích "What & Why" | AI cực kỳ giỏi tóm tắt thông tin code phức tạp thành ngôn ngữ tự nhiên (dễ hiểu) | Bịaa ra chức năng không có thật (Hallucination) |
+| Confirm | Quét diff và chỉ ra rủi ro logic, bảo mật trực tiếp trên từng dòng code | Khả năng đối chiếu tức thì với hàng triệu mẫu mã nguồn và lỗi phổ biến | Đưa ra quá nhiều cảnh báo rác (False Positive) làm phiền người dùng |
 
 ### Kết luận nhanh
 
 **AI leverage point quan trọng nhất của dự án tôi là:**  
-> _______________________________________________
+> Bước Confirm: Tự động phân tích PR diff và "Draft" (nháp) sẵn các comment chỉ ra lỗi logic tiềm ẩn để Tech Lead duyệt.
 
 **Vì sao không phải ở bước khác:**  
-> _______________________________________________
+> Nếu chỉ dừng ở tóm tắt (Locate), user vẫn phải mỏi mắt tự dò lỗi. Can thiệp vào khâu Confirm mới thực sự cắt giảm 50% thời gian review.
 
 ---
 
@@ -373,13 +374,15 @@ vì [giá trị rõ nhất].
 
 ### Bản hypothesis của tôi
 
-> _______________________________________________  
-> _______________________________________________
+> Nếu chúng ta giúp `Tech Lead` làm `việc phân tích rủi ro của PR` tốt hơn ở bước `Confirm`,  
+> bằng cách `dùng AI tự động quét file diff và đề xuất comment lỗi trực tiếp`,  
+> thì họ sẽ chuyển từ `việc rà soát mắt thường 100%` sang `dùng AI assistant của dự án`,  
+> vì `giúp họ tiết kiệm được một nửa thời gian review và giảm stress.`
 
 ### Tín hiệu sớm nếu hypothesis này đúng
 
-1. _______________________________________________
-2. _______________________________________________
+1. User chủ yếu phê duyệt (approve) các comment do AI gợi ý thay vì xoá bỏ chúng.
+2. Thời gian trung bình để duyệt và đóng một PR giảm đi rõ rệt.
 
 ---
 
@@ -399,15 +402,15 @@ Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chư
 
 | Assumption | Vì sao assumption này rủi ro? | Tôi đang có bằng chứng gì? | Cần validate bằng cách nào tiếp theo? |
 |---|---|---|---|
-| A1 | | | |
-| A2 | | | |
-| A3 | | | |
-| A4 | | | |
-| A5 | | | |
+| A1 | Tech Lead là người quyết định mua tool | Có thể Engineering Manager mới là người mua (Buyer) | Phỏng đoán | Khảo sát quy trình mua sắm phần mềm ở các công ty IT |
+| A2 | User dám cho AI truy cập mã nguồn công ty | Ngân hàng / Tổ chức tài chính sẽ cấm ngay lập tức | Feedback từ dự án tương tự | Đánh giá chuẩn bảo mật (SOC2, self-hosted LLM) |
+| A3 | AI đủ sức hiểu logic sâu giữa các file với nhau | Các model thường bị giới hạn context window | Thử nghiệm với GPT-4 / Claude 3.5 | Chạy thử trên 50 PR lỗi thật xem AI có bắt đúng không |
+| A4 | User đủ kiên nhẫn nếu AI báo lỗi sai | Nếu sinh ra quá nhiều cảnh báo rác, dev sẽ tắt tool | Quan sát behavior với SonarQube | Đo tỷ lệ Accept rate của AI comment trong Beta |
+| A5 | | | | |
 
 ### Assumption nguy hiểm nhất nếu tôi đang sai
 
-> _______________________________________________
+> Công ty dám cho phép AI bên thứ 3 truy cập vào kho mã nguồn (Bảo mật). Nếu điều này sai, sản phẩm sẽ chết ngay từ vòng đàm phán hợp đồng (compliance).
 
 ---
 
@@ -431,9 +434,9 @@ Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chư
 
 | Ý phản biện tôi nghe được | Nó chạm vào phần nào? | Tôi sẽ giữ / sửa gì? |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Ngân hàng sẽ không bao giờ cho tool đẩy code lên cloud ngoài | Assumption về Security | Sẽ phải thiết kế phương án On-premise (chạy model nội bộ) ngay từ đầu |
+| Tech Lead không phải là người trả tiền | Job Executor / Buyer | Giữ nguyên Executor là Tech Lead, nhưng ghi nhận thêm Manager là Buyer |
+| AI hay sinh ra comment rác làm phiền Dev | AI Leverage point | Điều chỉnh tính năng: AI chỉ "Draft" (lưu nháp) để người review tự quyết định chứ không tự push comment |
 
 ---
 
@@ -441,52 +444,52 @@ Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chư
 
 ### Sau khi nghe phản biện, tôi thay đổi gì?
 
-- [ ] Giữ nguyên `job executor`
+- [x] Giữ nguyên `job executor`
 - [ ] Sửa `job executor`
-- [ ] Giữ nguyên `core JTBD`
+- [x] Giữ nguyên `core JTBD`
 - [ ] Sửa `core JTBD`
 - [ ] Giữ nguyên `AI leverage point`
-- [ ] Sửa `AI leverage point`
+- [x] Sửa `AI leverage point`
 - [ ] Giữ nguyên `product hypothesis`
-- [ ] Sửa `product hypothesis`
+- [x] Sửa `product hypothesis`
 
 ### Vì sao tôi giữ / sửa?
 
-> _______________________________________________  
-> _______________________________________________
+> Nhận được phản biện rất hợp lý: AI chưa thể thay thế người duyệt 100% và rất dễ sinh rác. 
+> Cần sửa lại Hypothesis và Leverage point để AI lùi lại một bước thành "người soạn nháp comment" (Copilot) thay vì "Tự động comment thay Dev" (Autopilot).
 
 ### Version cuối cùng tôi nộp
 
 **Job executor:**  
-> _______________________________________________
+> Tech Lead / Senior Developer (Người có trách nhiệm review). 
 
 **Core JTBD:**  
-> _______________________________________________
+> Đánh giá chất lượng và rủi ro của đoạn code mới một cách nhanh chóng và chuẩn xác trước khi release.
 
 **2 bước đau nhất trong workflow:**  
-> _______________________________________________
+> Locate (Mất nhiều công sức tìm hiểu bối cảnh PR) & Confirm (Vắt óc tìm các lỗi logic ngầm).
 
 **AI leverage point chính:**  
-> _______________________________________________
+> Tự động tạo bản Tóm tắt PR (Locate) và "Nháp" sẵn các comment rủi ro logic để người review quyết định có gửi hay không (Confirm).
 
 **Product hypothesis:**  
-> _______________________________________________
+> Nếu giúp Tech Lead ở khâu Confirm bằng cách quét rủi ro và nháp sẵn comment, họ sẽ dùng tool vì nó cắt giảm 50% effort đọc code thủ công nhưng vẫn giữ quyền kiểm soát cuối cùng.
 
 **Assumption cần validate đầu tiên:**  
-> _______________________________________________
+> Security Compliance: Các công ty tiềm năng có chấp nhận tích hợp mã nguồn của họ với LLM API hay bắt buộc phải chạy Local LLM?
 
 ---
 
 ## Checklist trước khi nộp
 
-- [ ] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
-- [ ] Tôi đã phân biệt được `job executor` với buyer / influencer.
-- [ ] `Core JTBD` của tôi không nhét solution vào câu.
-- [ ] Tôi đã viết đủ 3 `job stories`.
-- [ ] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
-- [ ] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
-- [ ] Tôi đã ghi rõ `assumptions to validate`.
-- [ ] Tôi đã sửa version cuối sau khi share trong bàn.
+- [x] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
+- [x] Tôi đã phân biệt được `job executor` với buyer / influencer.
+- [x] `Core JTBD` của tôi không nhét solution vào câu.
+- [x] Tôi đã viết đủ 3 `job stories`.
+- [x] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
+- [x] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
+- [x] Tôi đã ghi rõ `assumptions to validate`.
+- [x] Tôi đã sửa version cuối sau khi share trong bàn.
 
 ---
 
